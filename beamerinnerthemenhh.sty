@@ -1,0 +1,66 @@
+\mode<presentation>
+
+% Square items
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{items}[square]
+
+
+% Title page
+\defbeamertemplate*{title page}{nhh}[1][]
+{
+  \vbox{}
+  \vfill
+  \begingroup
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \endgroup
+  \vfill
+}
+
+
+% Part page: nhh
+% \defbeamertemplate*{part page}{nhh}[1][]
+% {
+%   \begingroup
+%     \centering
+%     {\usebeamerfont{part name}\usebeamercolor[fg]{part name}\partname~\insertromanpartnumber}
+%     \vskip1em\par
+%     \begin{beamercolorbox}[sep=16pt,center,#1]{part title}
+%       \usebeamerfont{part title}\insertpart\par
+%     \end{beamercolorbox}
+%   \endgroup
+% }
+
+
+% Section page: nhh
+\defbeamertemplate*{section page}{nhh}[1][]
+{
+  \begingroup
+    \centering
+    {\usebeamerfont{section name}\usebeamercolor[fg]{section name}\sectionname~\insertsectionnumber}
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=12pt,center,#1]{section title}
+      \usebeamerfont{section title}\insertsection\par
+    \end{beamercolorbox}
+  \endgroup
+}
+
+\mode<all>

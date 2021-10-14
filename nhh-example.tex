@@ -1,50 +1,10 @@
 \documentclass[aspectratio=169]{beamer}
+\usetheme{nhh}
 
 % TODO:
 % - Sekundærlogo
 % - Tittelside
 % - Diamantmønster
-
-% ======
-% Themes
-% ======
-
-\usefonttheme{nhh}
-\usecolortheme[style=blue]{nhh}
-
-\beamertemplatenavigationsymbolsempty{}
-
-% \setlength{\columnseprule}{1ex}
-% \setlength{\columnsep}{1.5ex}
-
-% \useoutertheme[
-% 	subsection=false,
-% 	% footline=empty,
-% 	% footline=authorinstitute
-% 	% footline=authortitle
-% 	% footline=institutetitle
-% 	% footline=authorinstitutetitle
-% ]{miniframes}
-% \setbeamertemplate{mini frames}[default] % box, tick
-
-\setbeamertemplate{footline}[page number]
-
-% \useoutertheme{smoothbars}
-
-\useoutertheme[
-	hideothersubsections,
-	% hideallsubsections,
-	% right,
-	left
-]{sidebar}
-
-
-\useinnertheme{rectangles}
-% The other inner themes didn't seem appropriate
-% \useinnertheme{circles}
-% \useinnertheme{rounded}
-% \useinnertheme{inmargin}
-
 
 % ===============
 % Custom commands
@@ -54,6 +14,10 @@
 	\begin{column}{0.7ex}
 		{\usebeamercolor[bg]{column separator}\rule{0.7ex}{0.75\textheight}}
 	\end{column}
+}
+
+\AtBeginSection{
+	\frame[plain]{\sectionpage{}}
 }
 
 % ========
@@ -131,7 +95,7 @@ test
 	Bullets may expand in multiple levels based on outer theme.
 \end{frame}
 
-\section{Math}
+\section{Mathematics}
 \begin{frame}{A frame with equations}
 	\begin{align}
 		\frac{P_t}{N_t} &= \sum_{\tau=1}^{T} \frac{E_t \left [m_{t,\tau}C_{\tau}\right ]}{N_t} \\
