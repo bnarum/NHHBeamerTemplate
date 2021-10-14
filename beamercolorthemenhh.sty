@@ -10,8 +10,7 @@
 \ExecuteOptionsBeamer{style=blue} % blue will be default if nothing is given
 \ProcessOptionsBeamer
 \def\beamer@styleblue{blue}
-\def\beamer@stylegoldp{goldp}
-\def\beamer@stylegoldn{goldn}
+\def\beamer@stylegold{gold}
 \def\beamer@stylewhite{white}
 
 % ===============
@@ -22,57 +21,68 @@
 \definecolor{logogrey}{RGB}{201,202,204}
 \definecolor{logoblue}{RGB}{0,57,90}
 
-\definecolor{profile1}{RGB}{0,57,90}
-\definecolor{profile2}{RGB}{59,110,143}
-\definecolor{profile3}{RGB}{156,197,202}
-\definecolor{profile4}{RGB}{196,223,224}
-
-\definecolor{supportwarmgray2}{RGB}{233,227,220}
-\definecolor{supportwarmgray5}{RGB}{191,182,173}
-\definecolor{supportwarmgray9}{RGB}{154,139,125}
+\definecolor{profileblue}{RGB}{0,57,90}
+\definecolor{profileblue2}{RGB}{59,110,143}
 
 \definecolor{supportcoolgray2}{RGB}{230,231,232}
-\definecolor{supportcoolgray5}{RGB}{190,192,194}
-\definecolor{supportcoolgray9}{RGB}{145,145,149}
+\definecolor{supportwhite}{RGB}{255,255,255}
 
 \definecolor{contrastred}{RGB}{217,83,30}
 \definecolor{contrastyellow}{RGB}{226,228,119}
 \definecolor{contrastblack}{RGB}{65,64,66}
 \definecolor{contrastgreen}{RGB}{105,159,53}
 
+
+% Discontinued template colors
+% \definecolor{profileblue3}{RGB}{156,197,202}
+% \definecolor{profileblue4}{RGB}{196,223,224}
+
+% \definecolor{supportwarmgray2}{RGB}{233,227,220}
+% \definecolor{supportwarmgray5}{RGB}{191,182,173}
+% \definecolor{supportwarmgray9}{RGB}{154,139,125}
+
+% \definecolor{supportcoolgray5}{RGB}{190,192,194}
+% \definecolor{supportcoolgray9}{RGB}{145,145,149}
+
+% ==============================
+% Inserting into beamer patterns
+% ==============================
+
+% Main color
+\setbeamercolor{structure}{fg=profileblue}
+
+% Text
+\setbeamercolor{normal text}{fg=contrastblack}
+\setbeamercolor{alerted text}{fg=contrastred}
+
+% Titles
+\setbeamercolor{titlelike}{fg=supportwhite, bg=profileblue}
+
 % Palettes
-\setbeamercolor{palette primary}{fg=white, bg=profile1}
-\setbeamercolor{palette secondary}{fg=white, bg=profile1!80!profile2}
-\setbeamercolor{palette tertiary}{fg=white, bg=profile1!60!profile2}
-\setbeamercolor{palette quaternary}{fg=white, bg=profile1!40!profile2}
-\setbeamercolor{palette sidebar primary}{fg=white, bg=profile1}
+\setbeamercolor{palette primary}{fg=white, bg=profileblue}
+\setbeamercolor{palette secondary}{fg=white, bg=profileblue!80!profileblue2}
+\setbeamercolor{palette tertiary}{fg=white, bg=profileblue!60!profileblue2}
+\setbeamercolor{palette quaternary}{fg=white, bg=profileblue!40!profileblue2}
+
+\setbeamercolor{palette sidebar primary}{fg=white, bg=profileblue}
 
 % Sidebar
-\setbeamercolor*{sidebar}{fg=white,bg=profile1}
+\setbeamercolor*{sidebar}{fg=supportwhite,bg=profileblue}
 \setbeamercolor*{section in sidebar}{parent=sidebar}
 \setbeamercolor*{subsection in sidebar}{parent=sidebar}
 \setbeamercolor*{title in sidebar}{parent=sidebar}
 \setbeamercolor*{author in sidebar}{parent=sidebar, fg=contrastyellow}
 
-\ifx\beamer@style\beamer@stylegold%
-	
-\else\ifx\beamer@style\beamer@styleblue%
-	
-\fi\fi%
-
-\setbeamercolor{structure}{fg=profile1}
-\setbeamercolor{normal text}{fg=contrastblack}
-\setbeamercolor{alerted text}{fg=contrastred}
-
 % Separator between columns
 \setbeamercolor*{column separator}{bg=contrastyellow}
 
-\setbeamercolor{titlelike}{fg=white, bg=profile1}
-
-% \setbeamercolor{titlelike}{parent=palette primary, fg=contrastblack}
-
-% \setbeamercolor{frametitle}{fg=white, bg=supportcoolgray2!10!white}
-% \setbeamercolor{frametitle right}{bg=supportcoolgray2!60!white}
+% \ifx\beamer@style\beamer@stylegold%
+	
+% \else\ifx\beamer@style\beamer@styleblue%
+	
+% \fi\fi%
+% \setbeamercolor{frametitle}{fg=supportwhite, bg=supportcoolgray2!10!supportwhite}
+% \setbeamercolor{frametitle right}{bg=supportcoolgray2!60!supportwhite}
 
 % \setbeamercolor*{separation line}{}
 % \setbeamercolor*{fine separation line}{}
@@ -83,23 +93,19 @@
 % Logo
 % ====
 
-\ifx\beamer@style\beamer@stylegoldp%
+\ifx\beamer@style\beamer@stylegold%
 	\pgfdeclareimage[height=3em]{nhh-logo}{NHH_logo/nhh_logo_2f_positiv_gull.png}
-	\colorlet{antilogo}{white}
-\else\ifx\beamer@style\beamer@stylegoldn%
-	\pgfdeclareimage[height=3em]{nhh-logo}{NHH_logo/nhh_logo_2f_negativ_gull.png}
-	\colorlet{antilogo}{supportcoolgray5}
+	\colorlet{antilogo}{supportwhite}
 \else\ifx\beamer@style\beamer@stylewhite%
 	\pgfdeclareimage[height=3em]{nhh-logo}{NHH_logo/nhh_logo_1f_negativ_hvit.png}
-	\colorlet{antilogo}{supportwarmgray5}
+	\colorlet{antilogo}{supportcoolgray2!70!contrastblack}
 \else\ifx\beamer@style\beamer@styleblue%
 	\pgfdeclareimage[height=3em]{nhh-logo}{NHH_logo/nhh_logo_1f_positiv_helblaa.png}
 	\colorlet{antilogo}{supportcoolgray2}
-\fi\fi\fi\fi%
+\fi\fi\fi%\fi%
 
-\setbeamercolor*{logo}{bg=antilogo} % Logo surrounding color
+\setbeamercolor*{logo}{bg=antilogo} % Color surrounding the logo 
 \logo{\pgfuseimage{nhh-logo}}
 \setbeamercolor*{background canvas}{bg=antilogo!50} % Canvas background
-
 
 \mode<all>
