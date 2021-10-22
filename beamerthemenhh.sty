@@ -3,9 +3,12 @@
 \mode<presentation>
 
 % Requirement
-% \RequirePackage{tikz}
+\RequirePackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
 % \usepackage[absolute]{textpos}
-\usepackage{tikz}
+
+% \usepackage{tikz}
 
 \pgfdeclareimage[height=3em]{nhh-logo-upright-goldp}{NHH_logo/nhh_logo_2f_positiv_gull.png}
 \pgfdeclareimage[height=3em]{nhh-logo-upright-goldn}{NHH_logo/nhh_logo_2f_negativ_gull.png}
@@ -32,5 +35,18 @@
     {\usebeamercolor[bg]{column separator}\rule{0.7ex}{0.75\textheight}}
   \end{column}
 }
+
+
+% Turning on and off bullets in progressbar
+\let\beamer@writeslidentry@miniframeson=\beamer@writeslidentry%
+\def\beamer@writeslidentry@miniframesoff{%
+  \expandafter\beamer@ifempty\expandafter{\beamer@framestartpage}{}% does not happen normally
+  {%else
+    % removed \addtocontents commands
+    \clearpage\beamer@notesactions%
+  }
+}
+\newcommand*{\miniframeson}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframeson}
+\newcommand*{\miniframesoff}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframesoff}
 
 \mode<all>
