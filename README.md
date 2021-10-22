@@ -10,13 +10,19 @@
 
 ## Usage
 
+Load the theme using `\usetheme{nhh}` in the preamble. See details about Overleaf in installation instructions.
+
+### Extra commands
+
+- `\colseparator`: Inserts yellow rule within columns environment as a separator between columns.
+- `\SectionPagesOn`: Inserts a section page at each section start.
+- `\SectionPagesOff`: Removes automatic section pages.
+
 ## Installation
 
 ### Local installation of LaTeX
 
-Download the repo to the folder `<TeX root>\tex\latex`. Run `texhash` to update dependencies. Note that admin privileges may be needed to enable making changes to the TeX root folder, including when `texhash` is run.
-
-Development note: This does not neccessarily update when files are changed in the folder. Run `texhash` again.
+Place the repo in the folder `<TeX root>\tex\latex`. Run `texhash` to update dependencies. Note that admin privileges may be needed to enable making changes to the TeX root folder, including when `texhash` is run.
 
 ### Overleaf
 
