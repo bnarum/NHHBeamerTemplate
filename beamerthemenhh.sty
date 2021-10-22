@@ -1,12 +1,31 @@
+\ProvidesPackage{beamerthemenhh}[2021/10/21 NHH Beamer Template]
+
 \mode<presentation>
 
 % Requirement
 % \RequirePackage{tikz}
+% \usepackage[absolute]{textpos}
+\usepackage{tikz}
+
+\pgfdeclareimage[height=3em]{nhh-logo-upright-goldp}{NHH_logo/nhh_logo_2f_positiv_gull.png}
+\pgfdeclareimage[height=3em]{nhh-logo-upright-goldn}{NHH_logo/nhh_logo_2f_negativ_gull.png}
+\pgfdeclareimage[height=3em]{nhh-logo-upright-blue}{NHH_logo/nhh_logo_1f_positiv_helblaa.png}
+\pgfdeclareimage[height=3em]{nhh-logo-upright-white}{NHH_logo/nhh_logo_1f_negativ_hvit.png}
 
 % Settings
 \useinnertheme{nhh}
 \usecolortheme[style=blue]{nhh}
 \usefonttheme{nhh}
 \useoutertheme{nhh}
+
+
+% Extra commands
+\newcommand{\SectionPagesOn}{
+  \AtBeginSection{
+    \frame[plain]{\sectionpage}
+  }
+}
+\newcommand{\SectionPagesOff}{\AtBeginSection{}}
+
 
 \mode<all>

@@ -94,18 +94,18 @@
 % ====
 
 \ifx\beamer@style\beamer@stylegold%
-	\pgfdeclareimage[height=3em]{nhh-logo}{NHH_logo/nhh_logo_2f_positiv_gull.png}
+	\pgfaliasimage{nhh-logo}{nhh-logo-upright-goldn}
 	\colorlet{antilogo}{supportwhite}
 \else\ifx\beamer@style\beamer@stylewhite%
-	\pgfdeclareimage[height=3em]{nhh-logo}{NHH_logo/nhh_logo_1f_negativ_hvit.png}
+	\pgfaliasimage{nhh-logo}{nhh-logo-upright-white}
 	\colorlet{antilogo}{supportcoolgray2!70!contrastblack}
 \else\ifx\beamer@style\beamer@styleblue%
-	\pgfdeclareimage[height=3em]{nhh-logo}{NHH_logo/nhh_logo_1f_positiv_helblaa.png}
+	\pgfaliasimage{nhh-logo}{nhh-logo-upright-blue}
 	\colorlet{antilogo}{supportcoolgray2}
 \fi\fi\fi%\fi%
 
+\setbeamercolor*{background canvas}{bg=antilogo!50} % Canvas background
 \setbeamercolor*{logo}{bg=antilogo} % Color surrounding the logo 
 \logo{\pgfuseimage{nhh-logo}}
-\setbeamercolor*{background canvas}{bg=antilogo!50} % Canvas background
 
 \mode<all>

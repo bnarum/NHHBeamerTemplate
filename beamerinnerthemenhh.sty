@@ -4,62 +4,81 @@
 \setbeamertemplate{sections/subsections in toc}[square]
 \setbeamertemplate{items}[square]
 
+\pgfdeclareimage[height=0.95\paperheight]{nhh-diamonds}{NHH_additional/Asset4diamanter_fliplr.png}
+
+\def\backgroundimage{
+  \begin{tikzpicture}[overlay,remember picture]
+    \node[anchor=south east, inner sep=0pt, opacity=0.8] at (current page.south east) {\pgfuseimage{nhh-diamonds}};
+  \end{tikzpicture}
+}
 
 % Title page
 \defbeamertemplate*{title page}{nhh}[1][]
 {
-  \vbox{}
+  \setbeamertemplate*{background}{\backgroundimage}
+  % \vbox{}
   \vfill
   \begingroup
     \centering
-    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
-      \usebeamerfont{title}\inserttitle\par%
-      \ifx\insertsubtitle\@empty%
-      \else%
-        \vskip0.25em%
-        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
-      \fi%     
-    \end{beamercolorbox}%
-    \vskip1em\par
-    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
-      \usebeamerfont{author}\insertauthor
-    \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
-      \usebeamerfont{institute}\insertinstitute
-    \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
-      \usebeamerfont{date}\insertdate
-    \end{beamercolorbox}\vskip0.5em
-    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+    \begin{columns}[T]
+    \begin{column}{6pt}
+      \usebeamercolor[bg]{column separator}\rule{1ex}{0.7\textheight}
+    \end{column}
+    \begin{column}{\linewidth}
+      \begin{beamercolorbox}[sep=8pt,left,#1]{title}
+        \usebeamerfont{title}\inserttitle\par%
+        \ifx\insertsubtitle\@empty%
+        \else%
+          \vskip0.25em%
+          {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+        \fi%     
+      \end{beamercolorbox}%
+      \vskip1em\par
+      \begin{beamercolorbox}[sep=8pt,left,#1]{author}
+        \usebeamerfont{author}\insertauthor
+      \end{beamercolorbox}
+      \begin{beamercolorbox}[sep=8pt,left,#1]{institute}
+        \usebeamerfont{institute}\insertinstitute
+      \end{beamercolorbox}
+      \begin{beamercolorbox}[sep=8pt,left,#1]{date}
+        \usebeamerfont{date}\insertdate
+      \end{beamercolorbox}\vskip0.5em
+    \end{column}
+    \end{columns}
   \endgroup
   \vfill
 }
 
 
 % Part page: nhh
-% \defbeamertemplate*{part page}{nhh}[1][]
-% {
-%   \begingroup
-%     \centering
-%     {\usebeamerfont{part name}\usebeamercolor[fg]{part name}\partname~\insertromanpartnumber}
-%     \vskip1em\par
-%     \begin{beamercolorbox}[sep=16pt,center,#1]{part title}
-%       \usebeamerfont{part title}\insertpart\par
-%     \end{beamercolorbox}
-%   \endgroup
-% }
-
+\defbeamertemplate*{part page}{nhh}[1][]
+{
+  \begingroup
+    \centering
+    {\usebeamerfont{part name}\usebeamercolor[fg]{part name}\partname~\insertromanpartnumber}
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=16pt,center,#1]{part title}
+      \usebeamerfont{part title}\insertpart\par
+    \end{beamercolorbox}
+  \endgroup
+}
 
 % Section page: nhh
 \defbeamertemplate*{section page}{nhh}[1][]
 {
+  \setbeamertemplate*{background}{\backgroundimage}
   \begingroup
     \centering
-    {\usebeamerfont{section name}\usebeamercolor[fg]{section name}\sectionname~\insertsectionnumber}
-    \vskip1em\par
-    \begin{beamercolorbox}[sep=12pt,center,#1]{section title}
-      \usebeamerfont{section title}\insertsection\par
-    \end{beamercolorbox}
+      \begin{columns}[T]
+      \begin{column}{6pt}
+        \usebeamercolor[bg]{column separator}\rule{1ex}{0.7\textheight}
+      \end{column}
+      \begin{column}{\linewidth}
+      \begin{beamercolorbox}[sep=12pt,left,#1]{section title}
+          \usebeamerfont{section title}\insertsection\par
+      \end{beamercolorbox} 
+      \end{column}
+      \end{columns}
   \endgroup
 }
 
