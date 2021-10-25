@@ -17,6 +17,7 @@ Load the theme using `\usetheme{nhh}` in the preamble. See details about Overlea
 - `\colseparator`: Inserts yellow rule within columns environment as a separator between columns.
 - `\SectionPagesOn`: Inserts a section page at each section start.
 - `\SectionPagesOff`: Removes automatic section pages.
+- `\finalpage`: Makes the final page with "Thank you!" on it, similar to titlepage.
 
 ## Installation
 
