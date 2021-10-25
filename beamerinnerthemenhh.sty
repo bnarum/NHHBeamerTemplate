@@ -4,31 +4,31 @@
 \setbeamertemplate{sections/subsections in toc}[square]
 \setbeamertemplate{items}[square]
 
-\pgfdeclareimage[height=0.9\paperheight]{nhh-diamonds}{NHH_additional/Asset4diamanter_fliplr.png}
+% \pgfdeclareimage[height=0.9\paperheight]{nhh-diamonds}{NHH_additional/Asset4diamanter_fliplr.png}
+\pgfdeclareimage[height=0.9\paperheight]{nhh-diamonds}{NHH_additional/Asset4diamanter_fliplr_crop_colorcorr_logo.png}
+
 
 \def\backgroundimage{
   \begin{tikzpicture}[overlay,remember picture]
-    \node[anchor=south east, inner sep=0pt, opacity=0.8] at ($(current page.south east) + (-0.05\paperheight, 0.05\paperheight)$) {\pgfuseimage{nhh-diamonds}};
+    \node[at=(current page.center),fill=nhhblue, minimum width=\paperwidth, minimum height=\paperheight] {}; % !100!supportcoolgray2
+    \node[anchor=south east, inner sep=0pt] at ($(current page.south east) + (-0.05\paperheight, 0.05\paperheight)$) {\pgfuseimage{nhh-diamonds}}; % , opacity=1.0
+    \node[anchor=north east, inner sep=0pt] at ($(current page.north east) + (-0.05\paperheight, -0.05\paperheight)$) {\pgfuseimage{nhh-logo-upright-white-large}};
   \end{tikzpicture}
 }
 
 % Title page
 \defbeamertemplate*{title page}{nhh}[1][]
 {
-  \setbeamercolor*{background canvas}{bg=profileblue}
-
   \setbeamertemplate*{background}{\backgroundimage}
   \vbox{}
   \vfill
   \begingroup
-    \centering     
     \begin{columns}[T]
       \begin{column}{6pt}
         \usebeamercolor[bg]{column separator}\rule{6pt}{0.65\textheight}
       \end{column}
-      \begin{beamercolorbox}{title page info}
       \begin{column}{\textwidth}
-        \begin{beamercolorbox}[sep=8pt,left,#1]{title}
+        \begin{beamercolorbox}[sep=8pt,left,#1]{title in title page}
           \usebeamerfont{title}\inserttitle\par%
           \ifx\insertsubtitle\@empty%
           \else%
@@ -47,12 +47,10 @@
           \usebeamerfont{date}\insertdate
         \end{beamercolorbox}\vskip0.5em
       \end{column}
-      \end{beamercolorbox}
     \end{columns}
   \endgroup
   \vfill
 }
-
 
 % Part page: nhh
 \defbeamertemplate*{part page}{nhh}[1][]
@@ -75,15 +73,38 @@
     \centering
       \begin{columns}[T]
       \begin{column}{6pt}
-        \usebeamercolor[bg]{column separator}\rule{1ex}{0.7\textheight}
+        \usebeamercolor[bg]{column separator}\rule{1ex}{3em}
       \end{column}
       \begin{column}{\linewidth}
-      \begin{beamercolorbox}[sep=12pt,left,#1]{section title}
+      \begin{beamercolorbox}[sep=12pt,left,#1]{section title in section page}
           \usebeamerfont{section title}\insertsection\par
       \end{beamercolorbox} 
       \end{column}
       \end{columns}
   \endgroup
 }
+
+% Final page
+\defbeamertemplate*{final text}{nhh}{Thank you!}
+
+\defbeamertemplate*{final page}{nhh}[1][]
+{
+  \setbeamertemplate*{background}{\backgroundimage}
+  \begingroup
+    \centering
+      \begin{columns}[T]
+        \begin{column}{6pt}
+          \usebeamercolor[bg]{column separator}\rule{1ex}{3em}
+        \end{column}
+        \begin{column}{\linewidth}
+          \begin{beamercolorbox}[sep=12pt,left,#1]{section title in section page}
+              \usebeamerfont{section title}\usebeamertemplate*{final text}\par
+          \end{beamercolorbox}
+        \end{column}
+      \end{columns}
+  \endgroup
+}
+
+\def\finalpage{\usebeamertemplate*{final page}}
 
 \mode<all>

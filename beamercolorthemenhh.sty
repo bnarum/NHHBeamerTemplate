@@ -21,8 +21,8 @@
 \definecolor{logogrey}{RGB}{201,202,204}
 \definecolor{logoblue}{RGB}{0,57,90}
 
-\definecolor{profileblue}{RGB}{0,57,90}
-\definecolor{profileblue2}{RGB}{59,110,143}
+\definecolor{nhhblue}{RGB}{0,57,90}
+\definecolor{nhhbluesecondary}{RGB}{59,110,143}
 
 \definecolor{supportcoolgray2}{RGB}{230,231,232}
 \definecolor{supportwhite}{RGB}{255,255,255}
@@ -49,32 +49,34 @@
 % ==============================
 
 % Main color
-\setbeamercolor{structure}{fg=profileblue}
+\setbeamercolor{structure}{fg=nhhblue}
 
 % Text
 \setbeamercolor{normal text}{fg=contrastblack}
 \setbeamercolor{alerted text}{fg=contrastred}
 
 % Titles
-\setbeamercolor{titlelike}{fg=supportwhite, bg=profileblue}
+\setbeamercolor{titlelike}{fg=supportwhite, bg=nhhblue}
 
-\setbeamercolor{title page info}{fg=contrastblack, bg=supportcoolgray2}
+\setbeamercolor*{title page text}{fg=supportwhite, bg=}
+\setbeamercolor*{title in title page}{parent=title, fg=supportwhite, bg=}
+\setbeamercolor*{section title in section page}{parent=section title, fg=supportwhite, bg=}
 
-% \setbeamercolor{author}{fg=supportwhite, bg=profileblue}
-% \setbeamercolor{institute}{fg=supportwhite, bg=profileblue}
-% \setbeamercolor{date}{fg=supportwhite, bg=profileblue}
-% \setbeamercolor{titlegraphics}{fg=supportwhite, bg=profileblue}
+\setbeamercolor{author}{parent=title page text}
+\setbeamercolor{institute}{parent=title page text}
+\setbeamercolor{date}{parent=title page text}
+\setbeamercolor{titlegraphics}{parent=title page text}
 
 % Palettes
-\setbeamercolor{palette primary}{fg=white, bg=profileblue}
-\setbeamercolor{palette secondary}{fg=white, bg=profileblue!80!profileblue2}
-\setbeamercolor{palette tertiary}{fg=white, bg=profileblue!60!profileblue2}
-\setbeamercolor{palette quaternary}{fg=white, bg=profileblue!40!profileblue2}
+\setbeamercolor{palette primary}{fg=white, bg=nhhblue}
+\setbeamercolor{palette secondary}{fg=white, bg=nhhblue!80!profileblue2}
+\setbeamercolor{palette tertiary}{fg=white, bg=nhhblue!60!profileblue2}
+\setbeamercolor{palette quaternary}{fg=white, bg=nhhblue!40!profileblue2}
 
-\setbeamercolor{palette sidebar primary}{fg=white, bg=profileblue}
+\setbeamercolor{palette sidebar primary}{fg=white, bg=nhhblue}
 
 % Sidebar
-\setbeamercolor*{sidebar}{fg=supportwhite,bg=profileblue}
+\setbeamercolor*{sidebar}{fg=supportwhite,bg=nhhblue}
 \setbeamercolor*{section in sidebar}{parent=sidebar}
 \setbeamercolor*{subsection in sidebar}{parent=sidebar}
 \setbeamercolor*{title in sidebar}{parent=sidebar}
