@@ -1,6 +1,0 @@
-\beamer@sectionintoc {1}{The first section}{3}{0}{1}
-\beamer@sectionintoc {2}{Section with subsection}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{Test subsection}{7}{0}{2}
-\beamer@subsectionintoc {2}{2}{Another subsection}{8}{0}{2}
-\beamer@sectionintoc {3}{Mathematics}{9}{0}{3}
-\beamer@sectionintoc {4}{Lists}{12}{0}{4}
