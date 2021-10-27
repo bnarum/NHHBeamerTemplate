@@ -32,11 +32,40 @@
 }
 \newcommand{\SectionPagesOff}{\AtBeginSection{}}
 
-\newcommand{\colseparator}{
+\newcommand{\colsep}{
   \begin{column}{0.7ex}
     {\usebeamercolor[bg]{column separator}\rule{0.7ex}{0.75\textheight}}
   \end{column}
 }
+
+\newcommand{\twocol}[2]{
+  \begin{columns}
+  \begin{column}{0.5\linewidth}
+    #1
+  \end{column}
+  \colsep
+  \begin{column}{0.5\linewidth}
+  #2
+  \end{column}
+  \end{columns}
+}
+\newcommand{\threecol}[3]{
+  \begin{columns}
+  \begin{column}{0.33\linewidth}
+    #1
+  \end{column}
+  \colsep
+  \begin{column}{0.33\linewidth}
+    #2
+  \end{column}
+  \colsep
+  \begin{column}{0.33\linewidth}
+    #3
+  \end{column}
+  \end{columns}
+}
+
+
 
 
 % Turning on and off bullets in progressbar

@@ -21,11 +21,16 @@
 {
   \setbeamertemplate*{background}{\backgroundimage}
   \vbox{}
+  \vskip0.21\paperheight
   \vfill
   \begingroup
-    \begin{columns}[T]
+    \begin{columns}
       \begin{column}{6pt}
-        \usebeamercolor[bg]{column separator}\rule{6pt}{0.65\textheight}
+        \ifx\insertsubtitle\@empty%
+          \usebeamerfont{title}\usebeamercolor[bg]{column separator}\rule{6pt}{2em}
+        \else%
+          \usebeamerfont{title}\usebeamercolor[bg]{column separator}\rule{6pt}{4em}
+        \fi%  
       \end{column}
       \begin{column}{\textwidth}
         \begin{beamercolorbox}[sep=8pt,left,#1]{title in title page}
@@ -36,18 +41,21 @@
             {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
           \fi%     
         \end{beamercolorbox}%
-        \vskip1em\par
-        \begin{beamercolorbox}[sep=8pt,left,#1]{author}
-          \usebeamerfont{author}\insertauthor
-        \end{beamercolorbox}
-        \begin{beamercolorbox}[sep=8pt,left,#1]{institute}
-          \usebeamerfont{institute}\insertinstitute
-        \end{beamercolorbox}
-        \begin{beamercolorbox}[sep=8pt,left,#1]{date}
-          \usebeamerfont{date}\insertdate
-        \end{beamercolorbox}\vskip0.5em
       \end{column}
-    \end{columns}
+    \end{columns} 
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,left,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,left,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,left,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em
+    \begin{beamercolorbox}[sep=8pt,left]{titlegraphic}
+      \inserttitlegraphic
+    \end{beamercolorbox}
   \endgroup
   \vfill
 }
@@ -55,6 +63,7 @@
 % Part page: nhh
 \defbeamertemplate*{part page}{nhh}[1][]
 {
+  \setbeamertemplate*{background}{\backgroundimage}
   \begingroup
     \centering
     {\usebeamerfont{part name}\usebeamercolor[fg]{part name}\partname~\insertromanpartnumber}
@@ -71,9 +80,9 @@
   \setbeamertemplate*{background}{\backgroundimage}
   \begingroup
     \centering
-      \begin{columns}[T]
+      \begin{columns}
       \begin{column}{6pt}
-        \usebeamercolor[bg]{column separator}\rule{1ex}{3em}
+        \usebeamerfont{section title}\usebeamercolor[bg]{column separator}\rule{1ex}{2em}
       \end{column}
       \begin{column}{\linewidth}
       \begin{beamercolorbox}[sep=12pt,left,#1]{section title in section page}
@@ -105,6 +114,6 @@
   \endgroup
 }
 
-\def\finalpage{\usebeamertemplate*{final page}}
+\def\finalpage{\usebeamertemplate*{final page}\@thanks}
 
 \mode<all>

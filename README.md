@@ -8,6 +8,8 @@
 
 - `\SectionPagesOn` command
 
+- References slide
+
 ## Usage
 
 Load the theme using `\usetheme{nhh}` in the preamble. See details about Overleaf in installation instructions.
