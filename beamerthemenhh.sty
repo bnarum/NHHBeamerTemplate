@@ -8,15 +8,20 @@
 \usetikzlibrary{calc}
 % \usepackage[absolute]{textpos}
 
-% \usepackage{tikz}
+
+\newlength{\gridcellwidth}
+\setlength{\gridcellwidth}{0.05\paperwidth}
+
+\newlength{\gridsepwidth}
+\setlength{\gridsepwidth}{0.0015\paperwidth}
 
 \pgfdeclareimage[height=3em]{nhh-logo-upright-goldp}{NHH_logo/nhh_logo_2f_positiv_gull.png}
 \pgfdeclareimage[height=3em]{nhh-logo-upright-goldn}{NHH_logo/nhh_logo_2f_negativ_gull.png}
 \pgfdeclareimage[height=3em]{nhh-logo-upright-blue}{NHH_logo/nhh_logo_1f_positiv_helblaa.png}
 \pgfdeclareimage[height=3em]{nhh-logo-upright-white}{NHH_logo/nhh_logo_1f_negativ_hvit.png}
 
-\pgfdeclareimage[height=0.16\paperheight]{nhh-logo-upright-white-large}{NHH_logo/nhh_logo_1f_negativ_hvit.png}
-\pgfdeclareimage[height=0.16\paperheight]{nhh-logo-upright-gold-large}{NHH_logo/nhh_logo_2f_negativ_gull.png}
+\pgfdeclareimage[width=\gridcellwidth]{nhh-logo-upright-white-large}{NHH_logo/nhh_logo_1f_negativ_hvit.png}
+\pgfdeclareimage[width=\gridcellwidth]{nhh-logo-upright-gold-large}{NHH_logo/nhh_logo_2f_negativ_gull.png}
 
 % Settings
 \useinnertheme{nhh}
