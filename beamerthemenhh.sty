@@ -33,7 +33,9 @@
 % Extra commands
 \newcommand{\SectionPagesOn}{
   \AtBeginSection{
+    \miniframesoff{}
     \frame[plain]{\sectionpage}
+    \miniframeson{}
   }
 }
 \newcommand{\SectionPagesOff}{\AtBeginSection{}}
