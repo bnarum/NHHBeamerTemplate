@@ -4,13 +4,6 @@
 \setbeamertemplate{sections/subsections in toc}[square]
 \setbeamertemplate{items}[square]
 
-% \pgfdeclareimage[height=0.9\paperheight]{nhh-diamonds}{NHH_additional/Asset4diamanter_fliplr.png}
-\pgfdeclareimage[height=0.5\paperheight]{nhh-diamonds}{NHH_additional/Asset4diamanter_fliplr_crop_colorcorr.png}
-
-
-% \pgfdeclareimage[height=0.3\paperheight]{nhh-diamonds}{NHH_additional/1Asset1diamanter.png}
-
-
 \def\backgroundimage{
   \begin{tikzpicture}[overlay,remember picture]
     \node[at=(current page.center),fill=nhhblue, minimum width=\paperwidth, minimum height=\paperheight] {}; % !100!supportcoolgray2
@@ -25,33 +18,41 @@
     % \node[anchor=south east, inner sep=0pt, opacity=0.2] at (SE_corner) {\pgfuseimage{nhh-diamonds}}; % 
     \node[anchor=north east, inner sep=0pt] at (NE_corner) {\pgfuseimage{nhh-logo-upright-gold-large}};
 
-    \coordinate (start) at ($(SE_corner) - 6*(Ei)$);
+    \coordinate (start) at ($(SE_corner) - (5*\gridsepwidth + 6*\gridcellwidth, 0)$);
 
-    %Row 1  
-    \draw [fill=nhhbluesecondary, draw=none] (start) -- ($(start) + (E)$) -- ($(start) + (E) + (N)$) -- cycle;
-    \draw [fill=nhhbluesecondary, draw=none] ($(start) + (Ei)$) -- ($(start) + (Ei) + (N)$) -- ($(start) + (Ei) + (E)$) -- cycle;
-    \draw [fill=nhhbluesecondary, draw=none] ($(start) + 2*(Ei)$) -- ($(start) + 2*(Ei) + (N)$) -- ($(start) + 2*(Ei) + (E) + (N)$) -- cycle;
-    \draw [fill=nhhbluesecondary, draw=none] ($(start) + 3*(Ei)$) -- ($(start) + 3*(Ei) + (N)$) -- ($(start) + 3*(Ei) + (E)$) -- cycle;
-    \draw [fill=nhhbluesecondary, draw=none] ($(start) + 5*(Ei)$) -- ($(start) + 5*(Ei) + (N)$) -- ($(start) + 5*(Ei) + (E)$) -- cycle;
+    % Opacity gradings based on L1 distance from south east corner.
+    \pgfmathsetmacro{\d}{1.0}
+    \pgfmathsetmacro{\dd}{0.85}
+    \pgfmathsetmacro{\ddd}{0.7}
+    \pgfmathsetmacro{\dddd}{0.55}
+    \pgfmathsetmacro{\ddddd}{0.4}
+    \pgfmathsetmacro{\dddddd}{0.25}
+
+    %Row 1
+    \draw [fill=nhhbluesecondary, draw=none, opacity=\dddddd] (start) -- ($(start) + (E)$) -- ($(start) + (E) + (N)$) -- cycle;
+    \draw [fill=nhhbluesecondary, draw=none, opacity=\ddddd] ($(start) + (Ei)$) -- ($(start) + (Ei) + (N)$) -- ($(start) + (Ei) + (E)$) -- cycle;
+    \draw [fill=nhhbluesecondary, draw=none, opacity=\dddd] ($(start) + 2*(Ei)$) -- ($(start) + 2*(Ei) + (N)$) -- ($(start) + 2*(Ei) + (E) + (N)$) -- cycle;
+    \draw [fill=nhhbluesecondary, draw=none, opacity=\ddd] ($(start) + 3*(Ei)$) -- ($(start) + 3*(Ei) + (N)$) -- ($(start) + 3*(Ei) + (E)$) -- cycle;
+    \draw [fill=nhhbluesecondary, draw=none, opacity=\d] ($(start) + 5*(Ei)$) -- ($(start) + 5*(Ei) + (N)$) -- ($(start) + 5*(Ei) + (E)$) -- cycle;
 	
     %Row 2
-    \draw [fill=nhhbluesecondary, draw=none] ($(start) + (Ni) + (Ei) + (N)$) -- ($(start) + (Ni) + (Ei) + (N) + (E)$) -- ($(start) + (Ei) + (Ni) + (E)$) -- cycle;
-    \draw [fill=nhhbluesecondary, draw=none] ($(start) + (Ni) + 2*(Ei)$) -- ($(start) + (Ni) + 2*(Ei) + (N)$) -- ($(start) + (Ni) + 2*(Ei) + (E)$) -- cycle;
-    \draw [fill=nhhbluesecondary, draw=none] ($(start) + (Ni) + 4*(Ei)$) -- ($(start) + (Ni) + 4*(Ei) + (N)$) -- ($(start) + (Ni) + 4*(Ei) + (E)$) -- cycle; 
-    \draw [fill=nhhbluesecondary, draw=none] ($(start) + (Ni) + 5*(Ei)$) -- ($(start) + (Ni) + 5*(Ei) + (N) + (E)$) -- ($(start) + (Ni) + 5*(Ei) + (E)$) -- cycle;
+    \draw [fill=nhhbluesecondary, draw=none, opacity=\dddddd] ($(start) + (Ni) + (Ei) + (N)$) -- ($(start) + (Ni) + (Ei) + (N) + (E)$) -- ($(start) + (Ei) + (Ni) + (E)$) -- cycle;
+    \draw [fill=nhhbluesecondary, draw=none, opacity=\ddddd] ($(start) + (Ni) + 2*(Ei)$) -- ($(start) + (Ni) + 2*(Ei) + (N)$) -- ($(start) + (Ni) + 2*(Ei) + (E)$) -- cycle;
+    \draw [fill=nhhbluesecondary, draw=none, opacity=\ddd] ($(start) + (Ni) + 4*(Ei)$) -- ($(start) + (Ni) + 4*(Ei) + (N)$) -- ($(start) + (Ni) + 4*(Ei) + (E)$) -- cycle; 
+    \draw [fill=nhhbluesecondary, draw=none, opacity=\dd] ($(start) + (Ni) + 5*(Ei)$) -- ($(start) + (Ni) + 5*(Ei) + (N) + (E)$) -- ($(start) + (Ni) + 5*(Ei) + (E)$) -- cycle;
  
     %Row 3
-	\draw [fill=nhhbluesecondary, draw=none] ($(start) + 2*(Ni) + 2*(Ei)$) -- ($(start) + 2*(Ni) + 2*(Ei) + (N)$) -- ($(start) + 2*(Ni) + 2*(Ei) + (E)$) -- cycle;
- 	\draw [fill=nhhbluesecondary, draw=none] ($(start) + 2*(Ni) + 3*(Ei) + (N)$) -- ($(start) + 2*(Ni) + 3*(Ei) + (N) + (E)$) -- ($(start) + 3*(Ei) + 2*(Ni) + (E)$) -- cycle;
- 	\draw [fill=nhhbluesecondary, draw=none] ($(start) + 2*(Ni) + 5*(Ei) + (N)$) -- ($(start) + 2*(Ni) + 5*(Ei) + (N) + (E)$) -- ($(start) + 5*(Ei) + 2*(Ni) + (E)$) -- cycle;
- 
- 	%Row 4
-  \draw [fill=nhhbluesecondary, draw=none] ($(start) + 3*(Ni) + 3*(Ei)$) -- ($(start) + 3*(Ni) + 3*(Ei) + (N) + (E)$) -- ($(start) + 3*(Ni) + 3*(Ei) + (E)$) -- cycle;
- 	\draw [fill=nhhbluesecondary, draw=none] ($(start) + 3*(Ni) + 4*(Ei)$) -- ($(start) + 3*(Ni) + 4*(Ei) + (N) + (E)$) -- ($(start) + 3*(Ni) + 4*(Ei) + (E)$) -- cycle;
-	\draw [fill=nhhbluesecondary, draw=none] ($(start) + 3*(Ni) + 5*(Ei)$) -- ($(start) + 3*(Ni) + 5*(Ei) + (N)$) -- ($(start) + 3*(Ni) + 5*(Ei) + (E) + (N)$) -- cycle;
- 
- 	%Row 5
- 	\draw [fill=nhhbluesecondary, draw=none] ($(start) + 4*(Ni) + 5*(Ei)$) -- ($(start) + 4*(Ni) + 5*(Ei) + (N)$) -- ($(start) + 4*(Ni) + 5*(Ei) + (E)$) -- cycle;
+  	\draw [fill=nhhbluesecondary, draw=none, opacity=\dddddd] ($(start) + 2*(Ni) + 2*(Ei)$) -- ($(start) + 2*(Ni) + 2*(Ei) + (N)$) -- ($(start) + 2*(Ni) + 2*(Ei) + (E)$) -- cycle;
+   	\draw [fill=nhhbluesecondary, draw=none, opacity=\ddddd] ($(start) + 2*(Ni) + 3*(Ei) + (N)$) -- ($(start) + 2*(Ni) + 3*(Ei) + (N) + (E)$) -- ($(start) + 3*(Ei) + 2*(Ni) + (E)$) -- cycle;
+   	\draw [fill=nhhbluesecondary, draw=none, opacity=\ddd] ($(start) + 2*(Ni) + 5*(Ei) + (N)$) -- ($(start) + 2*(Ni) + 5*(Ei) + (N) + (E)$) -- ($(start) + 5*(Ei) + 2*(Ni) + (E)$) -- cycle;
+   
+   	%Row 4
+    \draw [fill=nhhbluesecondary, draw=none, opacity=\dddddd] ($(start) + 3*(Ni) + 3*(Ei)$) -- ($(start) + 3*(Ni) + 3*(Ei) + (N) + (E)$) -- ($(start) + 3*(Ni) + 3*(Ei) + (E)$) -- cycle;
+   	\draw [fill=nhhbluesecondary, draw=none, opacity=\ddddd] ($(start) + 3*(Ni) + 4*(Ei)$) -- ($(start) + 3*(Ni) + 4*(Ei) + (N) + (E)$) -- ($(start) + 3*(Ni) + 4*(Ei) + (E)$) -- cycle;
+  	\draw [fill=nhhbluesecondary, draw=none, opacity=\dddd] ($(start) + 3*(Ni) + 5*(Ei)$) -- ($(start) + 3*(Ni) + 5*(Ei) + (N)$) -- ($(start) + 3*(Ni) + 5*(Ei) + (E) + (N)$) -- cycle;
+   
+   	%Row 5
+   	\draw [fill=nhhbluesecondary, draw=none, opacity=\ddddd] ($(start) + 4*(Ni) + 5*(Ei)$) -- ($(start) + 4*(Ni) + 5*(Ei) + (N)$) -- ($(start) + 4*(Ni) + 5*(Ei) + (E)$) -- cycle;
  
   \end{tikzpicture}
 }
