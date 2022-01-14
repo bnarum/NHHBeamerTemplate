@@ -8,12 +8,18 @@
 \usetikzlibrary{calc}
 % \usepackage[absolute]{textpos}
 
-
+\usepackage{calc}
 \newlength{\gridcellwidth}
 \setlength{\gridcellwidth}{0.05\paperwidth}
 
 \newlength{\gridsepwidth}
 \setlength{\gridsepwidth}{0.0015\paperwidth}
+
+\newlength\titlepageinfowidth
+\setlength\titlepageinfowidth{\paperwidth-7\gridcellwidth-7\gridsepwidth-\beamer@leftmargin}
+
+\newlength\titlewidth
+\setlength\titlewidth{\paperwidth-2\gridcellwidth-2\gridsepwidth-\beamer@leftmargin}
 
 \pgfdeclareimage[height=3em]{nhh-logo-upright-goldp}{NHH_logo/nhh_logo_2f_positiv_gull.png}
 \pgfdeclareimage[height=3em]{nhh-logo-upright-goldn}{NHH_logo/nhh_logo_2f_negativ_gull.png}
@@ -34,11 +40,19 @@
 \newcommand{\SectionPagesOn}{
   \AtBeginSection{
     \miniframesoff{}
-    \frame[plain]{\sectionpage}
+    \frame[plain,noframenumbering]{\sectionpage}
     \miniframeson{}
   }
 }
 \newcommand{\SectionPagesOff}{\AtBeginSection{}}
+
+\newcommand{\FinalPageOn}{
+  \AtEndDocument{
+    \miniframesoff{}
+    \frame[plain,noframenumbering]{\finalpage}
+    \miniframeson{}
+  }
+}
 
 \newcommand{\colsep}{
   \begin{column}{0.7ex}
@@ -72,8 +86,6 @@
   \end{column}
   \end{columns}
 }
-
-
 
 
 % Turning on and off bullets in progressbar

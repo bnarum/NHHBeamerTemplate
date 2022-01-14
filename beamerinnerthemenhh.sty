@@ -65,16 +65,16 @@
   % \vskip0.21\paperheight
   \vfill
   \begingroup
-    \begin{columns}
-      \begin{column}{6pt}
+    \begin{columns}[c]
+      \begin{column}{\beamer@leftmargin}
         \ifx\insertsubtitle\@empty%
-          \usebeamerfont{title}\usebeamercolor[bg]{column separator}\rule{6pt}{3em}
+          \usebeamerfont{title}\usebeamercolor[bg]{column separator}\hfill\rule{0.8ex}{3em}
         \else%
-          \usebeamerfont{title}\usebeamercolor[bg]{column separator}\rule{6pt}{5em}
+          \usebeamerfont{title}\usebeamercolor[bg]{column separator}\hfill\rule{0.8ex}{5em}
         \fi%  
       \end{column}
-      \begin{column}{\textwidth}
-        \begin{beamercolorbox}[sep=8pt,left,wd={0.75\paperwidth},#1]{title in title page}
+      \begin{column}{\paperwidth-\beamer@leftmargin}
+        \begin{beamercolorbox}[sep=1em,left,wd={\titlewidth},#1]{title in title page}
           \usebeamerfont{title}\inserttitle\par%
           \ifx\insertsubtitle\@empty%
           \else%
@@ -85,16 +85,16 @@
       \end{column}
     \end{columns} 
     \vskip1em\par
-    \begin{beamercolorbox}[sep=8pt,left,#1]{author}
+    \begin{beamercolorbox}[sep=8pt,left,wd={\titlepageinfowidth},#1]{author}
       \usebeamerfont{author}\insertauthor
     \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=8pt,left,#1]{institute}
+    \begin{beamercolorbox}[sep=8pt,left,wd={\titlepageinfowidth},#1]{institute}
       \usebeamerfont{institute}\insertinstitute
     \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=8pt,left,#1]{date}
+    \begin{beamercolorbox}[sep=8pt,left,wd=\titlepageinfowidth,#1]{date}
       \usebeamerfont{date}\insertdate
     \end{beamercolorbox}\vskip0.5em
-    \begin{beamercolorbox}[sep=8pt,left,wd={0.5\paperwidth}]{titlegraphic}
+    \begin{beamercolorbox}[sep=8pt,left,wd=\titlepageinfowidth]{titlegraphic}
       \usebeamerfont{titlegraphic}\inserttitlegraphic
     \end{beamercolorbox}
   \endgroup
@@ -121,12 +121,12 @@
   \setbeamertemplate*{background}{\backgroundimage}
   \begingroup
     \centering
-      \begin{columns}
-      \begin{column}{6pt}
-        \usebeamerfont{section title}\usebeamercolor[bg]{column separator}\rule{1ex}{2em}
+      \begin{columns}[c]
+      \begin{column}{\beamer@leftmargin}
+        \usebeamerfont{section title}\usebeamercolor[bg]{column separator}\hfill\rule{0.8ex}{3em}
       \end{column}
-      \begin{column}{\linewidth}
-      \begin{beamercolorbox}[sep=12pt,left,#1]{section title in section page}
+      \begin{column}{\paperwidth-\beamer@leftmargin}
+      \begin{beamercolorbox}[sep=1em,wd=\titlewidth,left,#1]{section title in section page}
           \usebeamerfont{section title}\insertsection\par
       \end{beamercolorbox} 
       \end{column}
