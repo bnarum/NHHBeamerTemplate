@@ -44,9 +44,15 @@
     \miniframeson{}
   }
 }
-\newcommand{\SectionPagesOff}{\AtBeginSection{}}
 
-\newcommand{\FinalPageOn}{
+\newcommand{\TitlePageOn}{
+  \AtBeginDocument{
+    \frame[plain,noframenumbering]{\titlepage}
+  }
+}
+
+\newcommand{\FinalPageOn}[1]{
+  \setbeamertemplate{final text}{#1}
   \AtEndDocument{
     \miniframesoff{}
     \frame[plain,noframenumbering]{\finalpage}
