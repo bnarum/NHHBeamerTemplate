@@ -1,18 +1,27 @@
-\documentclass[aspectratio=169]{beamer}
+\documentclass[compress]{beamer}
+% aspectratio=169 gives wide-screen
+% ``compress'' will make elements smaller
+
 \usetheme{nhh}
 
-% TODO:
-% - Sekundærlogo
-% - Tittelside
-% - Diamantmønster
-% - Innhold med gul strek til venstre
-% - Automatisk liten tekst i titlegraphic
+% ===========
+% Outer theme
+% ===========
+
+\useoutertheme[subsection=false]{miniframes}
+% \useoutertheme{sidebar}
+% \useoutertheme{infolines}
+% \useoutertheme{smoothbars}
+% \useoutertheme{shadow}
 
 % ===============
 % Custom commands
 % ===============
 
+\TitlePageOn{}
+\AgendaPageOn{This is the Agenda text}
 \SectionPagesOn{}
+\FinalPageOn{Enter text for final slide here}
 
 % ========
 % Packages
@@ -29,21 +38,12 @@
 
 \author[Narum and Selle]{Benjamin S. Narum and Simon F. Selle}
 \institute[NHH]{NHH Norwegian School of Economics}
-\date[\year]{Conference of \LaTeX{} ---{} \today}
-\titlegraphic{This is a text with comment on the content of the presentation. %For example; Collaboration with \dots, Funding by \dots, etc.
-}
-
-\AtBeginDocument{	
-	\frame[plain]{\titlepage{}}
-	\frame[plain]{\tableofcontents}
-}
-\AtEndDocument{	
-	\frame[plain]{\finalpage}
-}
+\date[\year]{\today ---{} Conference of \LaTeX{} with a very long name}
+\titlegraphic{This is a text with comment on the content of the presentation.}
 
 \begin{document}
 
-\section{The first section}
+\section[First section]{The first section ---{} with a very very very very very very long title}
 
 \begin{frame}{A frame with content}
 	Text goes directly into the main body.
@@ -136,6 +136,5 @@ test
 \end{column}
 \end{columns}
 \end{frame}
-
 
 \end{document}

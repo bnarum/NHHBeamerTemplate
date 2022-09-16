@@ -19,6 +19,17 @@
 % 	left
 % ]{sidebar}
 
-\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{navigation symbols}{} % Remove navigation symbols
+
+% Hack to put page number above the footline. The footline has height 0 if nothing is in it, but if the theme also adds to the footline, the page number will crash in the logo. 
+\addtobeamertemplate{footline}
+{%
+	% \leavevmode % Will extend the footline to non-zero height
+	\usebeamercolor[fg]{page number in head/foot}
+	\vskip-2em
+	\hfill
+	\insertframenumber{}\,/\,\inserttotalframenumber{}\kern\gridsepwidth
+	\vskip\gridsepwidth%
+}
 
 \mode<all>

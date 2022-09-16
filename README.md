@@ -1,39 +1,33 @@
 # NHHBeamerTemplate
 
-## TODO
-
-- Title, part and section page design
-
-- `\endpage{text here}` command
-
-- `\SectionPagesOn` command
-
-- References slide
+This is a template for presentations made by beamer in LaTeX inspired by the design template of NHH Norwegian School of Economics. See `nhh-example.pdf` for a usage example.
 
 ## Usage
 
-Load the theme using `\usetheme{nhh}` in the preamble. See details about Overleaf in installation instructions.
+Load the theme using `\usetheme{nhh}` in the preamble. See details installation instructions below. Additional outer themes can be used by also loading `\useoutertheme{miniframes}`, for example. For supporting pages, like title, final page and section titles, it is adviced to use the provided commands below to consistency in some design effects.
 
 ### Extra commands
 
-- `\colseparator`: Inserts yellow rule within columns environment as a separator between columns.
-- `\SectionPagesOn`: Inserts a section page at each section start.
-- `\SectionPagesOff`: Removes automatic section pages.
-- `\finalpage`: Makes the final page with "Thank you!" on it, similar to titlepage.
+Some commands have been added for convenience:
+
+- `\TitlePageOn`: Inserts a title page
+- `\AgendaPageOn{<text>}`: Inserts page with content
+- `\FinalPageOn{<text>}`: Makes the final page with text
+- `\SectionPagesOn`: Inserts a section page at each section start
+- `\SectionPagesOff`: Removes automatic section pages
+- `\colsep`: Inserts yellow rule within columns environment as a separator between columns.
 
 ## Installation
 
-### Local installation of LaTeX
+### Local installation with TeXLive
 
-- Download the repo to a folder on your computer.
-
-- Make a symbolic link from the repo to the folder `<TeX root>/tex/latex`. For Unix use the terminal and specify `ln -s source target`. For Windows use Cmd and specify `mklink /D Target Source`.
+- Download the repo to `<TeX root>/tex/latex` on your computer.
 
 - Run `texhash` to update dependencies. This holds for texlive, the command may be different for other TeX-distributions.
 
-Note that admin privileges may be needed to enable making changes to the TeX root folder, including when `texhash` is run.
-
 The template can now be imported to any project in the preamble and changes made to the repo will update automatically.
+
+Alternatively, you can make a symbolic link from the repo to the folder `<TeX root>/tex/latex`. Unix command: `ln -s source target`, Windows:  `mklink /D Target Source`. Admin privileges may be needed to enable making changes to the TeX root folder, including when `texhash` is run.
 
 ### Overleaf
 

@@ -51,6 +51,16 @@
   }
 }
 
+\setbeamertemplate{agenda text}{Agenda}
+\newcommand{\AgendaPageOn}[1]{
+  \setbeamertemplate{agenda text}{#1}
+  \AtBeginDocument{
+    \begin{frame}[plain,noframenumbering]{\usebeamertemplate{agenda text}}
+      \tableofcontents
+    \end{frame}
+  }
+}
+
 \newcommand{\FinalPageOn}[1]{
   \setbeamertemplate{final text}{#1}
   \AtEndDocument{

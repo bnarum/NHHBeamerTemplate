@@ -1,6 +1,5 @@
 # Output pdfs ignored
 /output/*.pdf
-/*.pdf
 
 # ====================
 # GitHub TeX.gitignore

@@ -101,6 +101,24 @@
   \vfill
 }
 
+% Frame title from https://no.overleaf.com/project/6206075a32fe2bb8bbecb18b which has a frametitle-left 
+% \defbeamertemplate*{frametitle}{lucid}[1][]{
+%   \vskip0.5cm%
+%     \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle} 
+%     \begin{tikzpicture}
+%     \useasboundingbox(0,0) rectangle(\the\paperwidth,1.2);
+%     {\usebeamercolor[fg]{frametitle-left}}
+%     \fill[color=frametitle-left.fg] (0.2,0) rectangle(\the\marginedPaperWidth,1.2);
+%      \ifx\insertframesubtitle\@empty%
+%         {\node[anchor=west] at (0.3,0.61){\usebeamerfont{frametitle}\insertframetitle};}
+%         \else%
+%         {\node[anchor= west] at (0.2,0.81){\usebeamerfont{frametitle}\insertframetitle};%
+%          \node[anchor= west] at (0.4,0.25){\usebeamerfont{framesubtitle}-\insertframesubtitle};}%
+%         \fi
+%     \end{tikzpicture}
+%   \end{beamercolorbox}
+% }
+
 % Part page: nhh
 \defbeamertemplate*{part page}{nhh}[1][]
 {
