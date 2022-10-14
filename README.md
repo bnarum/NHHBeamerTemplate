@@ -33,4 +33,4 @@ Alternatively, you can make a symbolic link from the repo to the folder `<TeX ro
 
 ### Overleaf
 
-Download the repo and place it in a folder of the Overleaf project. Add the theme by `\usepackage{NHHBeamerTemplate/beamerthemenhh}` (this does the same as `\usetheme{nhh}` if the theme files had been in the TeX search path).
+Download the repo and place it in the root folder of the Overleaf project. Add the theme by `\usepackage{NHHBeamerTemplate/beamerthemenhh}` (this does the same as `\usetheme{nhh}` if the theme files had been in the TeX search path).
