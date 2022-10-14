@@ -4,7 +4,9 @@ This is a template for presentations made by beamer in LaTeX inspired by the des
 
 ## Usage
 
-Load the theme using `\usetheme{nhh}` in the preamble. See details installation instructions below. Additional outer themes can be used by also loading `\useoutertheme{miniframes}`, for example. For supporting pages, like title, final page and section titles, it is adviced to use the provided commands below to consistency in some design effects.
+Load the theme using `\usetheme{nhh}` in the preamble. See details installation instructions below. Additional outer themes can be used by also loading `\useoutertheme{miniframes}`, for example. For supporting pages, like title, final page and section titles, it is adviced to use the provided commands below to consistency in some design effects. 
+
+See `nhh-example.tex` for a template to get started.
 
 ### Extra commands
 
